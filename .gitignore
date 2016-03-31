@@ -1,0 +1,7 @@
+*.jar
+*.rpm
+*.zip
+*.tar.gz
+*.box
+.vagrant
+puppet/modules

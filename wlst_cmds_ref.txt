@@ -1,0 +1,27 @@
+nmConnect("weblogic","weblogic1","192.168.33.10",5556,"referencia_domain","/u01/app/oracle/wlsdomains/domains/referencia_domain","ssl")
+nmConnect("weblogic","weblogic1","192.168.33.11",5556,"referencia_domain","/u01/app/oracle/wlsdomains/domains/referencia_domain","ssl")
+nmConnect("weblogic","weblogic1","192.168.33.12",5556,"referencia_domain","/u01/app/oracle/wlsdomains/domains/referencia_domain","ssl")
+
+nmStart("AdminServer")
+nmKill("AdminServer")
+
+nmDisconnect()
+
+
+
+debug("true")
+connect("weblogic","weblogic1","192.168.33.10:7001")
+edit()
+startEdit()
+cmo.createServer("ManagedServer01")
+cd("/Servers/ManagedServer01")
+set('Machine',getMBean('/Machines/m_managed'))
+set('Cluster',getMBean('/Clusters/WebCluster'))
+set('ListenAddress', "192.168.33.11")
+set('ListenPort', 7001)
+set('ListenPortEnabled', "1")
+save()
+activate()
+
+
+

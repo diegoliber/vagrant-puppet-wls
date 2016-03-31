@@ -1,0 +1,49 @@
+moduledir 'modules'
+
+mod 'stdlib',
+  :git => 'https://github.com/puppetlabs/puppetlabs-stdlib.git',
+  :ref => '4.11.0'
+
+mod 'easy_type',
+  :git => 'https://github.com/cegeka/puppet-easy_type.git',
+  :ref => 'master'
+
+mod 'filemapper',
+  :git => 'https://github.com/voxpupuli/puppet-filemapper.git',
+  :ref => '1.1.3'
+
+mod 'yamlfile',
+  :git => 'https://github.com/reidmv/puppet-module-yamlfile.git',
+  :ref => '0.2.0'
+
+mod 'sleep',
+  :git => 'https://github.com/fiddyspence/puppet-sleep.git',
+  :ref => '1.2.0'
+
+mod 'jdk7',
+  :git => 'https://github.com/biemond/biemond-jdk7.git',
+  :ref => 'v0.5.3'
+
+mod 'limits',
+  :git => 'https://github.com/erwbgy/puppet-limits.git',
+  :ref => 'master'
+
+mod 'sysctl',
+  :git => 'https://github.com/fiddyspence/puppet-sysctl',
+  :ref => '1.1.0'
+
+mod 'orautils',
+  :git => 'https://github.com/biemond/biemond-orautils.git',
+  :ref => 'v0.5.1'
+
+mod 'orawls',
+  :git => 'https://github.com/biemond/biemond-orawls.git',
+  :ref => 'master'
+
+mod 'profile',
+  :git => 'https://github.com/diegoliber/puppet-profile.git',
+  :ref => 'master'
+
+mod 'ntp',
+  :git => 'https://github.com/puppetlabs/puppetlabs-ntp',
+  :ref => '4.1.2'

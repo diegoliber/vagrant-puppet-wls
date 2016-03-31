@@ -1,0 +1,9 @@
+profile::weblogic::server::managed::domain_name: 'referencia_domain'
+profile::weblogic::server::managed::admin_server_address: '192.168.33.10'
+profile::weblogic::server::managed::nodemanager_address: '192.168.33.12'
+
+profile::weblogic::server::managed::version: 1211
+profile::weblogic::server::managed::installer: 'wls1211_generic.jar'
+
+profile::weblogic::server::managed::instance_number: "02"
+profile::weblogic::server::managed::cluster: "WebCluster"
