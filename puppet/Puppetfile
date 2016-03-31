@@ -37,7 +37,7 @@ mod 'orautils',
   :ref => 'v0.5.1'
 
 mod 'orawls',
-  :git => 'https://github.com/biemond/biemond-orawls.git',
+  :git => 'https://github.com/diegoliber/biemond-orawls.git',
   :ref => 'master'
 
 mod 'profile',
