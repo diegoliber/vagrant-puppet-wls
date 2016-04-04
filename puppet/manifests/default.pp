@@ -8,9 +8,12 @@ node "admin" {
 
   include ntpconfig
 
+  include profile::oracle::se
+
   include profile::weblogic::server::admin
 
-  Service["iptables"] -> Class["ntpconfig"] -> Class["profile::weblogic::server::admin"]
+  Service["iptables"] -> Class["ntpconfig"] -> Class["profile::oracle::se"]
+    -> Class["profile::weblogic::server::admin"]
 
 }
 
@@ -24,8 +27,8 @@ node "managed01" {
 
   include profile::weblogic::server::managed
 
-
-  Service["iptables"] -> Class["ntpconfig"] -> Class["profile::weblogic::server::managed"]
+  Service["iptables"] -> Class["ntpconfig"]
+    -> Class["profile::weblogic::server::managed"]
 
 }
 

@@ -2,18 +2,26 @@ profile::weblogic::server::admin::domain_name: 'referencia_domain'
 profile::weblogic::server::admin::admin_server_address: '192.168.33.10'
 profile::weblogic::server::admin::nodemanager_address: '192.168.33.10'
 
-profile::weblogic::server::admin::version: 1211
-profile::weblogic::server::admin::installer: 'wls1211_generic.jar'
+#profile::weblogic::server::admin::version: 1211
+#profile::weblogic::server::admin::installer: 'wls1211_generic.jar'
 
 
-profile::weblogic::server::admin::servers:
-  - server: "ManagedServer01"
-    listenaddress: "192.168.33.11"
-    nm_listenport: "5556"
-    listenport: "7001"
-    listenportenabled: '1'
-    machinetype: 'UnixMachine'
-    nmtype: 'SSL'
+# profile::weblogic::server::admin::servers:
+#   - server: "ManagedServer01"
+#     listenaddress: "192.168.33.11"
+#     nm_listenport: "5556"
+#     listenport: "7001"
+#     listenportenabled: '1'
+#     machinetype: 'UnixMachine'
+#     nmtype: 'SSL'
 
 profile::weblogic::server::admin::servernames:
   - "ManagedServer01"
+
+profile::oracle::base::hosts:
+  'dbcdb.example.com':
+    ip:                "192.168.33.10"
+    host_aliases:      'dbcdb'
+  'localhost':
+    ip:                "127.0.0.1"
+    host_aliases:      'localhost.localdomain,localhost4,localhost4.localdomain4'
