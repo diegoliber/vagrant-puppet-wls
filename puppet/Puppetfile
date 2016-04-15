@@ -41,7 +41,7 @@ mod 'orawls',
   :ref => 'master'
 
 mod 'oradb',
-  :git => 'git@github.com:biemond/biemond-oradb.git'
+  :git => 'https://github.com/biemond/biemond-oradb.git'
   :ref => 'v2.0.4'
 
 mod 'profile',
