@@ -17,11 +17,3 @@ profile::weblogic::server::admin::nodemanager_address: '192.168.33.10'
 
 profile::weblogic::server::admin::servernames:
   - "ManagedServer01"
-
-profile::oracle::base::hosts:
-  'dbcdb.example.com':
-    ip:                "192.168.33.10"
-    host_aliases:      'dbcdb'
-  'localhost':
-    ip:                "127.0.0.1"
-    host_aliases:      'localhost.localdomain,localhost4,localhost4.localdomain4'

@@ -10,11 +10,11 @@ Vagrant.configure(2) do |config|
 
   config.vm.synced_folder ".", "/vagrant", :mount_options => ["dmode=777","fmode=777"]
 
-  # if Vagrant.has_plugin?("vagrant-proxyconf")
-  #   config.proxy.http     = "http://192.168.33.1:3128/"
-  #   config.proxy.https    = "http://192.168.33.1:3128/"
-  #   config.proxy.no_proxy = "localhost,127.0.0.1,.example.com"
-  # end
+  if Vagrant.has_plugin?("vagrant-proxyconf")
+    config.proxy.http     = "http://192.168.33.1:3128/"
+    config.proxy.https    = "http://192.168.33.1:3128/"
+    config.proxy.no_proxy = "localhost,127.0.0.1,.example.com"
+  end
 
   config.vm.box = "puppetlabs/centos-6.6-64-puppet"
   config.vm.box_version = '1.0.1'
@@ -24,19 +24,24 @@ Vagrant.configure(2) do |config|
     vb.memory = 1536
   end
 
-  config.vm.define "admin" do |v|
-    v.vm.host_name = "admin"
-    v.vm.network "private_network", ip: "192.168.33.10"
+  config.vm.define "db" do |v|
+    v.vm.host_name = "db"
+    v.vm.network "private_network", ip: "192.168.33.9"
     v.vm.provider "virtualbox" do |vb|
       vb.cpus = "2"
-      vb.memory = "4096"
+      vb.memory = "2048"
     end
   end
 
-  # config.vm.define "managed01" do |v|
-  #   v.vm.host_name = "managed01"
-  #   v.vm.network "private_network", ip: "192.168.33.11"
+  # config.vm.define "admin" do |v|
+  #   v.vm.host_name = "admin"
+  #   v.vm.network "private_network", ip: "192.168.33.10"
   # end
+
+  #config.vm.define "managed01" do |v|
+  #  v.vm.host_name = "managed01"
+  #  v.vm.network "private_network", ip: "192.168.33.11"
+  #end
 
   # config.vm.define "managed02" do |v|
   #   v.vm.host_name = "managed02"

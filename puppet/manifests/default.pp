@@ -1,6 +1,5 @@
 
-
-node "admin" {
+node "db" {
 
   service { "iptables":
     ensure => stopped
@@ -10,9 +9,23 @@ node "admin" {
 
   include profile::oracle::se
 
+  Service["iptables"] -> Class["ntpconfig"]
+    -> Class["profile::oracle::se"]
+
+}
+
+
+node "admin" {
+
+  service { "iptables":
+    ensure => stopped
+  }
+
+  include ntpconfig
+
   include profile::weblogic::server::admin
 
-  Service["iptables"] -> Class["ntpconfig"] -> Class["profile::oracle::se"]
+  Service["iptables"] -> Class["ntpconfig"]
     -> Class["profile::weblogic::server::admin"]
 
 }

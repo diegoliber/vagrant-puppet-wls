@@ -1,0 +1,7 @@
+profile::oracle::base::hosts:
+  'dbcdb.example.com':
+    ip:                "192.168.33.9"
+    host_aliases:      'dbcdb'
+  'localhost':
+    ip:                "127.0.0.1"
+    host_aliases:      'localhost.localdomain,localhost4,localhost4.localdomain4'
